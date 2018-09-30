@@ -9,6 +9,7 @@ It is meant to run on Node.js.
 # Configuration
 
 The configuration file should follow the next structure:
+
 `{attempts: <number-of-attempts>, session <array-of-rolls-result>}`
 
 Each element of `<the array-of-rolls-result>` shuold follow the next structure:
