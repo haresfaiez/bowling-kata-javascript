@@ -1,0 +1,15 @@
+{
+  "name": "bowling-kata",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Faiez Elhares",
+  "license": "ISC",
+  "devDependencies": {
+    "jasmine": "^3.2.0",
+    "jasmine-node": "^1.16.2"
+  }
+}
