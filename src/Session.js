@@ -1,3 +1,4 @@
+const Roll = require('./Roll')
 const Score = require('./Score')
 
 class Session {
@@ -6,19 +7,10 @@ class Session {
     this.registeredRolls = registeredRolls
   }
 
-  registerRoll(roll) {
+  registerRoll(lastRoll) {
     if (this.isOver()) throw new Error('This game session is over')
 
-    let increment
-    
-    if (roll.hits === 10)
-      increment = 'strike'
-    else if (Array.isArray(roll.hits) && (roll.hits[0] + roll.hits[1] === 10))
-      increment = 'spare'
-    else
-      increment = roll 
-
-    this.registeredRolls.push(increment)
+    this.registeredRolls.push(Roll.create(lastRoll))
   }
 
   rollsCount() {

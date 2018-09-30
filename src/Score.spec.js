@@ -3,13 +3,13 @@ const Roll = require('./Roll')
 
 describe('Score', () => {
   it('calculates a spare as 10 hits', () => {
-    const score = Score.from([ { hits: 2 }, 'spare' ])
+    const score = Score.from([ Roll.fromHits(2), Roll.spare() ])
     
     expect(score.result()).toEqual(12)
   })
 
   it('calculates the sum of the next hit when adding a strike', () => {
-    const score = Score.from([ 'strike', { hits: 2 } ])
+    const score = Score.from([ Roll.strike(), Roll.fromHits(2) ])
 
     expect(score.result()).toEqual(22)
   })

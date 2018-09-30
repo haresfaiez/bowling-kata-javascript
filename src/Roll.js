@@ -42,6 +42,27 @@ class Roll {
 
     return this.addScoreTo(precedent)
   }
+
+  static strike() {
+    return new Roll('strike')
+  }
+
+  static spare() {
+    return new Roll('spare')
+  }
+
+  static fromHits(hitsCount) {
+    return new Roll({ hits: hitsCount })
+  }
+
+  static create(roll) {
+    if (roll.hits === 10)
+      return Roll.strike()
+    else if (Array.isArray(roll.hits) && (roll.hits[0] + roll.hits[1] === 10))
+      return Roll.spare()
+    else
+      return new Roll(roll)
+  }
 }
 
 module.exports = Roll

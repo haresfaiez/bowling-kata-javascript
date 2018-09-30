@@ -30,13 +30,13 @@ describe('Bowling session with two attempts', () => {
   it('stores 10hits for one hit as a strike', () => {
     session.registerRoll({ hits: 10 })
 
-    expect(session.lastRoll()).toEqual('strike')
+    expect(session.lastRoll()).toEqual({ roll: 'strike' })
   })
 
   it('stores a sum of 10hits for two rolls as a spare', () => {
     session.registerRoll({ hits: [4, 6] })
 
-    expect(session.lastRoll()).toEqual('spare')
+    expect(session.lastRoll()).toEqual({ roll: 'spare' })
   })
 })
 
