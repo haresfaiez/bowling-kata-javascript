@@ -1,6 +1,9 @@
 Bowling-kata-javascript is a Javascript kata.
 It is meant to run on Node.js.
 
+# Setup
+Run `npm install` to download the dependencies the first time you clone the repository.
+
 # Operation
 
   * Run `npm start <configuration-file>` to start a bowling session
