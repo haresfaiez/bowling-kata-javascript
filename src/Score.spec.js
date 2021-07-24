@@ -2,6 +2,12 @@ const Score = require('./Score')
 const Roll = require('./Roll')
 
 describe('Score', () => {
+  it('calculates a fake as 0 hits', () => {
+    const score = Score.from([ Roll.fromHits(2), Roll.fake() ])
+
+    expect(score.result()).toEqual(2)
+  })
+
   it('calculates a spare as 10 hits', () => {
     const score = Score.from([ Roll.fromHits(2), Roll.spare() ])
     
